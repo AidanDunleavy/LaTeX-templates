@@ -1,0 +1,66 @@
+%TeX command: LaTeX
+%The first set of commands determines the overall look of your document.
+\documentclass[12pt]{amsart}
+\setlength{\textwidth}{6.1in}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\hoffset}{4pt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{setspace}
+
+%The next set of commands inputs a package for making diagrams.
+\input xy
+\xyoption{matrix}
+\xyoption{arrow}
+\xyoption{curve}
+
+%The next two lines make it easy for me to put comments into your drafts.
+\usepackage[usenames]{color}
+\def\comment#1{{\color{red}{#1}}}
+
+%The next two groups define "environments" useful for mathematics.
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{lemma}{Lemma}
+
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{construction}{Construction}
+\newtheorem*{notation}{Notation}
+\def\P{{\mathcal{P}}}
+
+
+%These are a couple of useful definitions.
+\long\def\ignore#1\endignore{}
+\newcommand{\card}[1]{{\overline{\overline{#1}}}}
+\newcommand{\li}{\mathord{\text{li}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\Nat}{\mathord{\text{Nat}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\newcommand{\id}{\mathord{\text{id}}}
+\newcommand{\Ob}{\mathord{\text{Ob}}}
+\newcommand{\Mor}{\mathord{\text{Mor}}}
+\newcommand{\Cat}{\mathord{\text{Cat}}}
+\newcommand{\Set}{\mathord{\text{Set}}}
+%Now we actually get to stuff that shows up in the document.
+\begin{document}
+
+
+%The next line makes your document double spaced.
+\doublespacing
+\title{Multivariable Calculus, Homework 15}
+
+\author{Aidan Dunleavy}
+
+\date{Nov. 20, 2019}
+
+\maketitle
+
+
+\end{document}
