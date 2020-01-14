@@ -1,0 +1,94 @@
+%TeX command: LaTeX
+%The first set of commands determines the overall look of your document.
+\documentclass[12pt]{amsart}
+\setlength{\textwidth}{6.1in}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\hoffset}{4pt}
+\setlength{\parskip}{5pt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{setspace}
+
+%The next two lines make it easy for me to put comments into your drafts.
+\usepackage[usenames]{color}
+\def\comment#1{{\color{red}{#1}}}
+
+%The next two groups define "environments" useful for mathematics.
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{construction}{Construction}
+\newtheorem*{notation}{Notation}
+
+%These are a couple of useful definitions.
+\newcommand{\abs}[1]{\left\vert{#1}\right\vert}
+\long\def\ignore#1\endignore{}
+\newcommand{\id}{{\text{id}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+
+\begin{document}
+
+%Now we actually get to stuff that shows up in the document.
+\title{Math 31500, Homework 0}
+
+\author{Stu Dent}
+
+\date{Jan.\ 0, 2020}
+
+\maketitle
+
+%The next line makes your document double spaced.
+\doublespacing
+
+\comment{\emph{This is where you put the statement of the problem that you're
+solving.  You should recopy the problem \emph{exactly} as stated in 
+the assignment.  For example, the problem might be the following, which
+was an actual homework problem from a couple of years ago:}}
+
+Prove that $f(x)=\displaystyle\frac{x}{\sqrt{1+x^2}}$ defines a bijection from $\R$
+to $(-1,1)$ by finding its inverse function $g:(-1,1)\to\R$ and showing
+that $g\circ f=\id_\R$ and $f\circ g=\id_{(-1,1)}$.
+
+\comment{\emph{You should follow the statement of the problem with your solution.
+Since this problem calls for a proof, you should
+provide one.}}  
+
+\begin{proof}
+First, we note that $f(x)\in(-1,1)$, since 
+\[
+(f(x))^2=\frac{x^2}{1+x^2}=1-\frac{1}{1+x^2}<1,
+\]
+so taking square roots, we get
+$\abs{f(x)}<1$, and therefore $ -1<f(x)<1$.
+
+Next, let $g:(-1,1)\to\R$ be defined by
+\[
+g(x)=\frac{x}{\sqrt{1-x^2}}.
+\]
+Note that since $x\in(-1,1)$, $1-x^2>0$, so the function is well-defined.
+
+Now we show that $g\circ f=\id_\R$.  Let $x\in\R$.  Then we have
+\[
+(g\circ f)(x)=g(f(x))=g\left(\frac{x}{\sqrt{1+x^2}}\right)
+=\frac{\big(\frac{x}{\sqrt{1+x^2}}\big)}{\sqrt{1-\frac{x^2}{1+x^2}}}
+=\frac{\big(\frac{x}{\sqrt{1+x^2}}\big)}{\sqrt{\frac{1}{1+x^2}}}=x.
+\]
+
+And finally, we show that $f\circ g=\id_{(-1,1)}$.  Let $x\in(-1,1)$.  Then we have
+\[
+(f\circ g)(x)=f(g(x))=f\left(\frac{x}{\sqrt{1-x^2}}\right)
+=\frac{\big(\frac{x}{\sqrt{1-x^2}}\big)}{\sqrt{1+\frac{x^2}{1-x^2}}}
+=\frac{\big(\frac{x}{\sqrt{1-x^2}}\big)}{\sqrt{\frac{1}{1-x^2}}}=x.
+\]
+Therefore $f:\R\to(-1,1)$ is a bijection with inverse $g$.
+\end{proof}
+
+\end{document}
